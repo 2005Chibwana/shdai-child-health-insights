@@ -46,20 +46,24 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-black/5">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b border-blue-100 sticky top-0 z-50">
+      <header className="bg-white/90 backdrop-blur-sm border-b border-orange-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-teal-600 rounded-lg flex items-center justify-center">
-                <Heart className="h-6 w-6 text-white" />
+              <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+                <img 
+                  src="/lovable-uploads/0e038066-6702-4388-bdb0-9774a0033d24.png" 
+                  alt="SHDAI Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
-                  SHDAI
+                <h1 className="text-2xl font-bold text-primary">
+                  Smart Health Diagnostics AI
                 </h1>
-                <p className="text-sm text-gray-600">Smart Health Data Analytics Initiative</p>
+                <p className="text-sm font-medium text-black">Neon Plus</p>
               </div>
             </div>
             
@@ -134,21 +138,21 @@ const HomeContent = ({ onSectionChange, selectedRole }: { onSectionChange: (sect
       {/* Hero Section */}
       <section className="text-center py-12">
         <div className="max-w-4xl mx-auto">
-          <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-200">
+          <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
             AI-Powered Child Health Platform
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-black to-accent bg-clip-text text-transparent">
             Reducing Child Mortality with AI
           </h1>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            SHDAI empowers caregivers and health workers in Zambia with AI-driven diagnostics, 
+            SHDAI Neon Plus empowers caregivers and health workers in Zambia with AI-driven diagnostics, 
             predictive risk assessment, and real-time disease surveillance to save children's lives.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
               onClick={() => onSectionChange('symptom-checker')}
-              className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700"
+              className="bg-primary hover:bg-primary/90 text-white"
             >
               <Brain className="mr-2 h-5 w-5" />
               Start Symptom Check
@@ -157,6 +161,7 @@ const HomeContent = ({ onSectionChange, selectedRole }: { onSectionChange: (sect
               size="lg" 
               variant="outline"
               onClick={() => onSectionChange('computer-vision')}
+              className="border-accent text-accent hover:bg-accent hover:text-white"
             >
               <Camera className="mr-2 h-5 w-5" />
               Upload Image for Analysis
@@ -167,12 +172,12 @@ const HomeContent = ({ onSectionChange, selectedRole }: { onSectionChange: (sect
 
       {/* Features Grid */}
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Card className="group hover:shadow-lg transition-all duration-300 border-blue-100 hover:border-blue-200">
+        <Card className="group hover:shadow-lg transition-all duration-300 border-primary/20 hover:border-primary/40">
           <CardHeader>
-            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
-              <Brain className="h-6 w-6 text-blue-600" />
+            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+              <Brain className="h-6 w-6 text-primary" />
             </div>
-            <CardTitle className="text-blue-900">AI Symptom Checker</CardTitle>
+            <CardTitle className="text-black">AI Symptom Checker</CardTitle>
           </CardHeader>
           <CardContent>
             <p className="text-gray-600 mb-4">
@@ -283,28 +288,28 @@ const HomeContent = ({ onSectionChange, selectedRole }: { onSectionChange: (sect
       </section>
 
       {/* Impact Statistics */}
-      <section className="bg-gradient-to-r from-blue-600 to-teal-600 rounded-2xl p-8 text-white">
+      <section className="bg-gradient-to-r from-primary to-black rounded-2xl p-8 text-white">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-bold mb-4">Our Impact in Zambia</h2>
-          <p className="text-blue-100">Reducing child mortality through AI-powered healthcare</p>
+          <p className="text-orange-100">Reducing child mortality through AI-powered healthcare</p>
         </div>
         
-        <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-4 gap-6">
           <div className="text-center">
             <div className="text-3xl font-bold mb-2">2,500+</div>
-            <div className="text-blue-100">Children Screened</div>
+            <div className="text-orange-100">Children Screened</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold mb-2">150+</div>
-            <div className="text-blue-100">Health Workers Trained</div>
+            <div className="text-orange-100">Health Workers Trained</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold mb-2">95%</div>
-            <div className="text-blue-100">Diagnostic Accuracy</div>
+            <div className="text-orange-100">Diagnostic Accuracy</div>
           </div>
           <div className="text-center">
             <div className="text-3xl font-bold mb-2">24/7</div>
-            <div className="text-blue-100">Offline Support</div>
+            <div className="text-orange-100">Offline Support</div>
           </div>
         </div>
       </section>
