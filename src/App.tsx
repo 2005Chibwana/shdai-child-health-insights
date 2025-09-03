@@ -9,6 +9,10 @@ import AccountPage from "./pages/AccountPage";
 import SettingsPage from "./pages/SettingsPage";
 import PatientDetailsPage from "./pages/PatientDetailsPage";
 import NearbyFacilitiesPage from "./pages/NearbyFacilitiesPage";
+import ArrivalRegistrationPage from "./pages/ArrivalRegistrationPage";
+import TriagePage from "./pages/TriagePage";
+import ConsultationPage from "./pages/ConsultationPage";
+import DiagnosticPage from "./pages/DiagnosticPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -20,13 +24,16 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<LoginSignupPage />} />
+          <Route path="/" element={<LoginSignupPage />} />
+          <Route path="/dashboard" element={<Index />} />
           <Route path="/account" element={<AccountPage />} />
           <Route path="/settings" element={<SettingsPage />} />
           <Route path="/patient-details" element={<PatientDetailsPage />} />
           <Route path="/nearby-facilities" element={<NearbyFacilitiesPage />} />
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/arrival-registration" element={<ArrivalRegistrationPage />} />
+          <Route path="/triage" element={<TriagePage />} />
+          <Route path="/consultation" element={<ConsultationPage />} />
+          <Route path="/diagnostics" element={<DiagnosticPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
