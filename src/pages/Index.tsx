@@ -46,24 +46,24 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-black/5">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-green-50 to-white">
       {/* Header */}
-      <header className="bg-white/90 backdrop-blur-sm border-b border-orange-100 sticky top-0 z-50">
+      <header className="bg-white/95 backdrop-blur-sm border-b border-green-100 sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-lg overflow-hidden flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-500 to-green-500 shadow-lg">
                 <img 
                   src="/lovable-uploads/0e038066-6702-4388-bdb0-9774a0033d24.png" 
                   alt="SHDAI Logo" 
-                  className="w-full h-full object-contain"
+                  className="w-8 h-8 object-contain filter brightness-0 invert"
                 />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-primary">
-                  Smart Health Diagnostics AI
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                  SHDAI Child Health
                 </h1>
-                <p className="text-sm font-medium text-black">Neon Plus</p>
+                <p className="text-sm font-medium text-green-700">❤️ Saving Young Lives</p>
               </div>
             </div>
             
@@ -138,78 +138,116 @@ const HomeContent = ({ onSectionChange, selectedRole }: { onSectionChange: (sect
       {/* Hero Section */}
       <section className="text-center py-12">
         <div className="max-w-4xl mx-auto">
-          <Badge className="mb-4 bg-primary/10 text-primary hover:bg-primary/20">
-            AI-Powered Child Health Platform
+          <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200 text-lg px-4 py-2 rounded-full">
+            🩺 WHO/UNICEF IMCI-Powered Platform
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-black to-accent bg-clip-text text-transparent">
-            Reducing Child Mortality with AI
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-green-600 to-blue-700 bg-clip-text text-transparent leading-tight">
+            🌟 Every Child Deserves to Thrive
           </h1>
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            SHDAI Neon Plus empowers caregivers and health workers in Zambia with AI-driven diagnostics, 
-            predictive risk assessment, and real-time disease surveillance to save children's lives.
+          <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
+            Empowering Zambian families and health workers with AI-powered child health diagnostics. 
+            Quick symptom checks, growth monitoring, and life-saving alerts - all in your local language.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              size="lg" 
-              onClick={() => onSectionChange('symptom-checker')}
-              className="bg-primary hover:bg-primary/90 text-white"
-            >
-              <Brain className="mr-2 h-5 w-5" />
-              Start Symptom Check
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              onClick={() => onSectionChange('computer-vision')}
-              className="border-accent text-accent hover:bg-accent hover:text-white"
-            >
-              <Camera className="mr-2 h-5 w-5" />
-              Upload Image for Analysis
-            </Button>
-          </div>
+          {/* Role-Based Quick Actions */}
+          {!selectedRole ? (
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-green-200 shadow-lg">
+              <h3 className="text-xl font-semibold text-center mb-4 text-gray-800">👋 Welcome! Choose your role to get started:</h3>
+              <div className="text-center text-sm text-gray-600 mb-4">
+                Select your role above ↗️ to access personalized features
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                onClick={() => onSectionChange('symptom-checker')}
+                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg min-h-[60px] text-lg rounded-xl"
+              >
+                <Brain className="mr-3 h-6 w-6" />
+                🔍 Check Child's Symptoms
+              </Button>
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => onSectionChange('computer-vision')}
+                className="border-2 border-green-500 text-green-700 hover:bg-green-500 hover:text-white shadow-lg min-h-[60px] text-lg rounded-xl"
+              >
+                <Camera className="mr-3 h-6 w-6" />
+                📸 Photo Health Check
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 
+      {/* Health Insights Dashboard */}
+      {selectedRole && (
+        <section className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-green-200 shadow-lg">
+          <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
+            📊 Health Insights Dashboard
+          </h2>
+          <div className="grid md:grid-cols-3 gap-4">
+            <div className="bg-gradient-to-br from-green-100 to-green-200 p-4 rounded-xl text-center">
+              <div className="text-3xl mb-2">🌡️</div>
+              <div className="text-sm text-green-800 font-medium">Temperature Check</div>
+              <div className="text-2xl font-bold text-green-700">Normal</div>
+            </div>
+            <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-4 rounded-xl text-center">
+              <div className="text-3xl mb-2">📏</div>
+              <div className="text-sm text-blue-800 font-medium">Growth Status</div>
+              <div className="text-2xl font-bold text-blue-700">On Track</div>
+            </div>
+            <div className="bg-gradient-to-br from-yellow-100 to-yellow-200 p-4 rounded-xl text-center">
+              <div className="text-3xl mb-2">💉</div>
+              <div className="text-sm text-yellow-800 font-medium">Vaccinations</div>
+              <div className="text-2xl font-bold text-yellow-700">Up to Date</div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Features Grid */}
       <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <Card className="group hover:shadow-lg transition-all duration-300 border-primary/20 hover:border-primary/40">
+        <Card className="group hover:shadow-xl transition-all duration-300 border-blue-200 hover:border-blue-400 bg-gradient-to-br from-blue-50 to-white">
           <CardHeader>
-            <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
-              <Brain className="h-6 w-6 text-primary" />
+            <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+              <Brain className="h-7 w-7 text-white" />
             </div>
-            <CardTitle className="text-black">AI Symptom Checker</CardTitle>
+            <CardTitle className="text-blue-900 text-lg">🧠 Smart Symptom Checker</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-600 mb-4">
-              Voice-enabled symptom analysis using IMCI algorithms and machine learning for accurate diagnosis.
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              IMCI-guided symptom analysis with voice support in local languages. Get instant health advice for your child.
             </p>
             <Button 
               variant="outline" 
               size="sm"
               onClick={() => onSectionChange('symptom-checker')}
+              className="w-full border-blue-500 text-blue-700 hover:bg-blue-500 hover:text-white"
             >
-              Try Now
+              🔍 Start Check
             </Button>
           </CardContent>
         </Card>
 
-        <Card className="group hover:shadow-lg transition-all duration-300 border-green-100 hover:border-green-200">
+        <Card className="group hover:shadow-xl transition-all duration-300 border-green-200 hover:border-green-400 bg-gradient-to-br from-green-50 to-white">
           <CardHeader>
-            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-green-200 transition-colors">
-              <Camera className="h-6 w-6 text-green-600" />
+            <div className="w-14 h-14 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-lg">
+              <Camera className="h-7 w-7 text-white" />
             </div>
-            <CardTitle className="text-green-900">Computer Vision Diagnostics</CardTitle>
+            <CardTitle className="text-green-900 text-lg">📸 Photo Health Check</CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-gray-600 mb-4">
-              Upload photos to detect skin conditions, jaundice, dehydration, and malnutrition signs.
+            <p className="text-gray-700 mb-4 leading-relaxed">
+              Take photos to detect jaundice, skin conditions, malnutrition, and dehydration signs using AI vision.
             </p>
             <Button 
               variant="outline" 
               size="sm"
               onClick={() => onSectionChange('computer-vision')}
+              className="w-full border-green-500 text-green-700 hover:bg-green-500 hover:text-white"
             >
-              Upload Image
+              📷 Upload Photo
             </Button>
           </CardContent>
         </Card>
@@ -288,28 +326,28 @@ const HomeContent = ({ onSectionChange, selectedRole }: { onSectionChange: (sect
       </section>
 
       {/* Impact Statistics */}
-      <section className="bg-gradient-to-r from-primary to-black rounded-2xl p-8 text-white">
+      <section className="bg-gradient-to-r from-green-600 via-blue-600 to-green-700 rounded-2xl p-8 text-white shadow-2xl">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold mb-4">Our Impact in Zambia</h2>
-          <p className="text-orange-100">Reducing child mortality through AI-powered healthcare</p>
+          <h2 className="text-3xl font-bold mb-4">🌍 Our Impact in Zambia</h2>
+          <p className="text-green-100 text-lg">Together, we're saving young lives with AI-powered healthcare</p>
         </div>
         
           <div className="grid md:grid-cols-4 gap-6">
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">2,500+</div>
-            <div className="text-orange-100">Children Screened</div>
+          <div className="text-center bg-white/20 rounded-xl p-4 backdrop-blur-sm">
+            <div className="text-4xl font-bold mb-2">👶 2,500+</div>
+            <div className="text-green-100 font-medium">Children Screened</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">150+</div>
-            <div className="text-orange-100">Health Workers Trained</div>
+          <div className="text-center bg-white/20 rounded-xl p-4 backdrop-blur-sm">
+            <div className="text-4xl font-bold mb-2">👩‍⚕️ 150+</div>
+            <div className="text-green-100 font-medium">Health Workers Trained</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">95%</div>
-            <div className="text-orange-100">Diagnostic Accuracy</div>
+          <div className="text-center bg-white/20 rounded-xl p-4 backdrop-blur-sm">
+            <div className="text-4xl font-bold mb-2">🎯 95%</div>
+            <div className="text-green-100 font-medium">Diagnostic Accuracy</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold mb-2">24/7</div>
-            <div className="text-orange-100">Offline Support</div>
+          <div className="text-center bg-white/20 rounded-xl p-4 backdrop-blur-sm">
+            <div className="text-4xl font-bold mb-2">🌙 24/7</div>
+            <div className="text-green-100 font-medium">Offline Support</div>
           </div>
         </div>
       </section>
