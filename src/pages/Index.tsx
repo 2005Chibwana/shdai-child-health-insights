@@ -46,13 +46,13 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-green-50 to-white">
+    <div className="min-h-screen bg-gradient-to-br from-accent/20 via-health-success/20 to-background">
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm border-b border-green-100 sticky top-0 z-50 shadow-sm">
+      <header className="bg-background/95 backdrop-blur-sm border-b border-primary/20 sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-blue-500 to-green-500 shadow-lg">
+              <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-primary to-secondary shadow-lg">
                 <img 
                   src="/lovable-uploads/0e038066-6702-4388-bdb0-9774a0033d24.png" 
                   alt="SHDAI Logo" 
@@ -60,10 +60,10 @@ const Index = () => {
                 />
               </div>
               <div>
-                <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+                <h1 className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   SHDAI Child Health
                 </h1>
-                <p className="text-sm font-medium text-green-700">❤️ Saving Young Lives</p>
+                <p className="text-sm font-medium text-primary">❤️ Saving Young Lives</p>
               </div>
             </div>
             
@@ -138,21 +138,21 @@ const HomeContent = ({ onSectionChange, selectedRole }: { onSectionChange: (sect
       {/* Hero Section */}
       <section className="text-center py-12">
         <div className="max-w-4xl mx-auto">
-          <Badge className="mb-6 bg-blue-100 text-blue-800 hover:bg-blue-200 text-lg px-4 py-2 rounded-full">
+          <Badge className="mb-6 bg-primary/10 text-primary hover:bg-primary/20 text-lg px-4 py-2 rounded-full border border-primary/30">
             🩺 WHO/UNICEF IMCI-Powered Platform
           </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 via-green-600 to-blue-700 bg-clip-text text-transparent leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent leading-tight">
             🌟 Every Child Deserves to Thrive
           </h1>
-          <p className="text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-3xl mx-auto">
             Empowering Zambian families and health workers with AI-powered child health diagnostics. 
             Quick symptom checks, growth monitoring, and life-saving alerts - all in your local language.
           </p>
           {/* Role-Based Quick Actions */}
           {!selectedRole ? (
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-green-200 shadow-lg">
-              <h3 className="text-xl font-semibold text-center mb-4 text-gray-800">👋 Welcome! Choose your role to get started:</h3>
-              <div className="text-center text-sm text-gray-600 mb-4">
+            <div className="bg-background/80 backdrop-blur-sm rounded-2xl p-6 max-w-2xl mx-auto border border-primary/30 shadow-lg">
+              <h3 className="text-xl font-semibold text-center mb-4 text-foreground">👋 Welcome! Choose your role to get started:</h3>
+              <div className="text-center text-sm text-muted-foreground mb-4">
                 Select your role above ↗️ to access personalized features
               </div>
             </div>
@@ -161,7 +161,7 @@ const HomeContent = ({ onSectionChange, selectedRole }: { onSectionChange: (sect
               <Button 
                 size="lg" 
                 onClick={() => onSectionChange('symptom-checker')}
-                className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg min-h-[60px] text-lg rounded-xl"
+                className="bg-gradient-to-r from-primary to-secondary hover:from-primary/90 hover:to-secondary/90 text-primary-foreground shadow-lg min-h-[60px] text-lg rounded-xl"
               >
                 <Brain className="mr-3 h-6 w-6" />
                 🔍 Check Child's Symptoms
@@ -170,7 +170,7 @@ const HomeContent = ({ onSectionChange, selectedRole }: { onSectionChange: (sect
                 size="lg" 
                 variant="outline"
                 onClick={() => onSectionChange('computer-vision')}
-                className="border-2 border-green-500 text-green-700 hover:bg-green-500 hover:text-white shadow-lg min-h-[60px] text-lg rounded-xl"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground shadow-lg min-h-[60px] text-lg rounded-xl"
               >
                 <Camera className="mr-3 h-6 w-6" />
                 📸 Photo Health Check
@@ -182,25 +182,25 @@ const HomeContent = ({ onSectionChange, selectedRole }: { onSectionChange: (sect
 
       {/* Health Insights Dashboard */}
       {selectedRole && (
-        <section className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 border border-green-200 shadow-lg">
-          <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
+        <section className="bg-background/90 backdrop-blur-sm rounded-2xl p-6 border border-primary/30 shadow-lg">
+          <h2 className="text-2xl font-bold text-center mb-6 text-foreground">
             📊 Health Insights Dashboard
           </h2>
           <div className="grid md:grid-cols-3 gap-4">
-            <div className="bg-gradient-to-br from-green-100 to-green-200 p-4 rounded-xl text-center">
+            <div className="bg-gradient-to-br from-health-success/20 to-health-success/40 p-4 rounded-xl text-center border border-health-success/30">
               <div className="text-3xl mb-2">🌡️</div>
-              <div className="text-sm text-green-800 font-medium">Temperature Check</div>
-              <div className="text-2xl font-bold text-green-700">Normal</div>
+              <div className="text-sm text-health-success font-medium">Temperature Check</div>
+              <div className="text-2xl font-bold text-health-success">Normal</div>
             </div>
-            <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-4 rounded-xl text-center">
+            <div className="bg-gradient-to-br from-accent/20 to-accent/40 p-4 rounded-xl text-center border border-accent/30">
               <div className="text-3xl mb-2">📏</div>
-              <div className="text-sm text-blue-800 font-medium">Growth Status</div>
-              <div className="text-2xl font-bold text-blue-700">On Track</div>
+              <div className="text-sm text-accent-foreground font-medium">Growth Status</div>
+              <div className="text-2xl font-bold text-accent-foreground">On Track</div>
             </div>
-            <div className="bg-gradient-to-br from-yellow-100 to-yellow-200 p-4 rounded-xl text-center">
+            <div className="bg-gradient-to-br from-health-warning/20 to-health-warning/40 p-4 rounded-xl text-center border border-health-warning/30">
               <div className="text-3xl mb-2">💉</div>
-              <div className="text-sm text-yellow-800 font-medium">Vaccinations</div>
-              <div className="text-2xl font-bold text-yellow-700">Up to Date</div>
+              <div className="text-sm text-health-warning font-medium">Vaccinations</div>
+              <div className="text-2xl font-bold text-health-warning">Up to Date</div>
             </div>
           </div>
         </section>

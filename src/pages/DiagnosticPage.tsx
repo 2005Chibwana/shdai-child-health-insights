@@ -198,10 +198,10 @@ const DiagnosticPage = () => {
 
   const getUrgencyColor = (urgency: string) => {
     switch (urgency) {
-      case 'immediate': return 'bg-red-100 text-red-800 border-red-300';
-      case 'urgent': return 'bg-orange-100 text-orange-800 border-orange-300';
-      case 'routine': return 'bg-green-100 text-green-800 border-green-300';
-      default: return 'bg-gray-100 text-gray-800 border-gray-300';
+      case 'immediate': return 'bg-health-critical/10 text-health-critical border-health-critical/30';
+      case 'urgent': return 'bg-secondary/10 text-secondary border-secondary/30';
+      case 'routine': return 'bg-health-success/10 text-health-success border-health-success/30';
+      default: return 'bg-muted text-muted-foreground border-border';
     }
   };
 
@@ -362,32 +362,32 @@ const DiagnosticPage = () => {
                   <div>
                     <h3 className="font-medium text-lg mb-4 text-primary">Laboratory Tests</h3>
                     <div className="space-y-4">
-                      <div className="border-l-4 border-orange-400 pl-4">
+                      <div className="border-l-4 border-secondary pl-4">
                         <h4 className="font-medium">Malaria Testing</h4>
                         <p className="text-sm text-muted-foreground">
                           Order when: Fever + lives in malaria area + no signs of pneumonia
                         </p>
-                        <p className="text-xs text-orange-600 mt-1">
+                        <p className="text-xs text-secondary mt-1">
                           RDT first choice, microscopy for confirmation
                         </p>
                       </div>
 
-                      <div className="border-l-4 border-red-400 pl-4">
+                      <div className="border-l-4 border-health-critical pl-4">
                         <h4 className="font-medium">Full Blood Count</h4>
                         <p className="text-sm text-muted-foreground">
                           Order when: Severe pallor + prolonged fever + poor feeding
                         </p>
-                        <p className="text-xs text-red-600 mt-1">
+                        <p className="text-xs text-health-critical mt-1">
                           Check for anemia and infection markers
                         </p>
                       </div>
 
-                      <div className="border-l-4 border-blue-400 pl-4">
+                      <div className="border-l-4 border-accent pl-4">
                         <h4 className="font-medium">Stool Analysis</h4>
                         <p className="text-sm text-muted-foreground">
                           Order when: Diarrhea &gt;14 days OR blood in stool
                         </p>
-                        <p className="text-xs text-blue-600 mt-1">
+                        <p className="text-xs text-accent-foreground mt-1">
                           Look for parasites and bacterial pathogens
                         </p>
                       </div>
@@ -397,22 +397,22 @@ const DiagnosticPage = () => {
                   <div>
                     <h3 className="font-medium text-lg mb-4 text-primary">Imaging Studies</h3>
                     <div className="space-y-4">
-                      <div className="border-l-4 border-purple-400 pl-4">
+                      <div className="border-l-4 border-primary pl-4">
                         <h4 className="font-medium">Chest X-ray</h4>
                         <p className="text-sm text-muted-foreground">
                           Order when: Severe pneumonia OR pneumonia not improving after 2 days
                         </p>
-                        <p className="text-xs text-purple-600 mt-1">
+                        <p className="text-xs text-primary mt-1">
                           Look for complications like effusion
                         </p>
                       </div>
 
-                      <div className="border-l-4 border-green-400 pl-4">
+                      <div className="border-l-4 border-health-success pl-4">
                         <h4 className="font-medium">Abdominal Ultrasound</h4>
                         <p className="text-sm text-muted-foreground">
                           Order when: Persistent abdominal pain + mass palpable
                         </p>
-                        <p className="text-xs text-green-600 mt-1">
+                        <p className="text-xs text-health-success mt-1">
                           Assess for organomegaly or masses
                         </p>
                       </div>

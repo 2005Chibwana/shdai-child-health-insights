@@ -17,26 +17,35 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
 
-    --primary: 16 100% 50%;
+    /* Orange primary theme #FF6200 */
+    --primary: 19 100% 50%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 96.1%;
+    /* Light orange secondary #FFA500 */
+    --secondary: 39 100% 50%;
     --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45%;
 
-    --accent: 240 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Light blue accent #ADD8E6 */
+    --accent: 194 53% 79%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Red for critical alerts #FF0000 */
+    --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
+
+    /* Health colors */
+    --health-success: 120 73% 75%;
+    --health-warning: 60 100% 50%;
+    --health-critical: 0 100% 50%;
 
     --border: 0 0% 90%;
     --input: 0 0% 90%;
-    --ring: 16 100% 50%;
+    --ring: 19 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -62,22 +71,26 @@ All colors MUST be HSL.
     --card: 0 0% 0%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 0%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
 
-    --primary: 16 100% 50%;
+    /* Orange primary theme for dark mode */
+    --primary: 19 100% 50%;
     --primary-foreground: 0 0% 0%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
+    /* Light orange secondary for dark mode */
+    --secondary: 39 100% 50%;
+    --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 65%;
 
-    --accent: 240 100% 50%;
-    --accent-foreground: 0 0% 100%;
+    /* Light blue accent for dark mode */
+    --accent: 194 53% 79%;
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 62.8% 30.6%;
+    /* Red for critical alerts in dark mode */
+    --destructive: 0 100% 50%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 15%;

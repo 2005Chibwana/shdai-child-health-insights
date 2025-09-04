@@ -79,10 +79,10 @@ const TriagePage = () => {
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'normal': return 'text-green-600 bg-green-50 border-green-200';
-      case 'warning': return 'text-orange-600 bg-orange-50 border-orange-200';
-      case 'danger': return 'text-red-600 bg-red-50 border-red-200';
-      default: return 'text-gray-600 bg-gray-50 border-gray-200';
+      case 'normal': return 'text-health-success bg-health-success/10 border-health-success/30';
+      case 'warning': return 'text-health-warning bg-health-warning/10 border-health-warning/30';
+      case 'danger': return 'text-health-critical bg-health-critical/10 border-health-critical/30';
+      default: return 'text-muted-foreground bg-muted border-border';
     }
   };
 
@@ -257,26 +257,26 @@ const TriagePage = () => {
                     
                     <div className="grid grid-cols-3 gap-2 text-sm">
                       <div>Temperature</div>
-                      <div className="text-green-600">36.0-37.4°C</div>
-                      <div className="text-red-600">≥38.5°C</div>
+                      <div className="text-health-success">36.0-37.4°C</div>
+                      <div className="text-health-critical">≥38.5°C</div>
                     </div>
                     
                     <div className="grid grid-cols-3 gap-2 text-sm">
                       <div>O2 Saturation</div>
-                      <div className="text-green-600">95-100%</div>
-                      <div className="text-red-600">&lt;90%</div>
+                      <div className="text-health-success">95-100%</div>
+                      <div className="text-health-critical">&lt;90%</div>
                     </div>
                     
                     <div className="grid grid-cols-3 gap-2 text-sm">
                       <div>Respiratory Rate</div>
-                      <div className="text-green-600">30-50/min</div>
-                      <div className="text-red-600">&gt;60/min</div>
+                      <div className="text-health-success">30-50/min</div>
+                      <div className="text-health-critical">&gt;60/min</div>
                     </div>
                     
                     <div className="grid grid-cols-3 gap-2 text-sm">
                       <div>Heart Rate</div>
-                      <div className="text-green-600">100-160/min</div>
-                      <div className="text-red-600">&gt;180/min</div>
+                      <div className="text-health-success">100-160/min</div>
+                      <div className="text-health-critical">&gt;180/min</div>
                     </div>
                   </div>
                 </CardContent>
@@ -329,10 +329,10 @@ const TriagePage = () => {
                         onChange={(e) => handleVitalChange('muac', e.target.value)}
                         placeholder="13.5"
                       />
-                      {vitals.muac > 0 && (
+                       {vitals.muac > 0 && (
                         <Badge 
                           variant="secondary" 
-                          className={`mt-1 ${vitals.muac < 11.5 ? 'text-red-600 bg-red-50' : vitals.muac < 12.5 ? 'text-orange-600 bg-orange-50' : 'text-green-600 bg-green-50'}`}
+                          className={`mt-1 ${vitals.muac < 11.5 ? 'text-health-critical bg-health-critical/10' : vitals.muac < 12.5 ? 'text-health-warning bg-health-warning/10' : 'text-health-success bg-health-success/10'}`}
                         >
                           {vitals.muac < 11.5 ? 'SAM (Severe)' : vitals.muac < 12.5 ? 'MAM (Moderate)' : 'Normal'}
                         </Badge>
