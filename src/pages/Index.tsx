@@ -12,6 +12,7 @@ import HealthDashboard from '@/components/HealthDashboard';
 import AdminDashboard from '@/components/AdminDashboard';
 import DiseaseSurveillance from '@/components/DiseaseSurveillance';
 import ChatBot from '@/components/ChatBot';
+import shdaiLogo from '@/assets/shdai-logo.jpg';
 
 const Index = () => {
   const [selectedRole, setSelectedRole] = useState<string | null>(null);
@@ -54,9 +55,9 @@ const Index = () => {
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center bg-gradient-to-br from-primary to-secondary shadow-lg">
                 <img 
-                  src="/lovable-uploads/0e038066-6702-4388-bdb0-9774a0033d24.png" 
-                  alt="SHDAI Logo" 
-                  className="w-8 h-8 object-contain filter brightness-0 invert"
+                  src={shdaiLogo} 
+                  alt="SHDAI Logo - Smart Health Diagnostics AI" 
+                  className="w-10 h-10 object-cover rounded-lg"
                 />
               </div>
               <div>
